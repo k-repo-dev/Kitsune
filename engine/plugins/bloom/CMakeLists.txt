@@ -1,4 +1,4 @@
-add_library(kitsune_plugin_bloom STATIC
+add_library(kitsune_plugin_bloom SHARED
     src/bloom.cpp
 )
 
