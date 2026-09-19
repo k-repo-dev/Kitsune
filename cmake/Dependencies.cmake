@@ -13,7 +13,10 @@ FetchContent_MakeAvailable(SDL3)
 
 FetchContent_Declare(
     Slang
-    GIT_REPOSITORY https://github.com/shader-slang/slang/releases/download/v2026.18/slang-2026.18-linux-x86_64-glibc-2.27.tar.gz
-    GIT_TAG sha256:e45ea4f117d51b8c1e84fa49f562081e73a9f29d02bd4f7fad20678603282829
+    URL https://github.com/shader-slang/slang/releases/download/v2026.18/slang-2026.18-linux-x86_64-glibc-2.27.tar.gz
+    URL_HASH SHA256=e45ea4f117d51b8c1e84fa49f562081e73a9f29d02bd4f7fad20678603282829
 )
-FetchContent_MakeAvailable(Slang)
+FetchContent_Populate(Slang)
+
+list(APPEND CMAKE_PREFIX_PATH "${slang_SOURCE_DIR}/lib/cmake/slang")
+find_package(slang REQUIRED CONFIG)

@@ -10,4 +10,5 @@ target_include_directories(kitsune_engine
 
 target_link_libraries(kitsune_engine
     PRIVATE SDL3::SDL3
+    PRIVATE slang::slang
 )
